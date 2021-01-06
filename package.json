@@ -1,0 +1,20 @@
+{
+  "name": "tfft-countdown",
+  "version": "0.1.0",
+  "description": "A simple countdown.",
+  "repository": "https://github.com/desholmes/tfft-countdown",
+  "scripts": {
+    "clean": "rm -rf ./dist/*.css ./dist/*.map ./dist/*.js ",
+    "start": "parcel ./src/index.html",
+    "build": "npm run clean && parcel build",
+    "lint": "prettier --check .",
+    "lint-fix": "prettier --write ."
+  },
+  "author": "Des Holmes https://github.com/desholmes",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "1.12.4",
+    "prettier": "2.1.2",
+    "sass": "1.28.0"
+  }
+}
