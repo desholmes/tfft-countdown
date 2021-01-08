@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900');
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
 
 .TfftCountdown {
   width: 100%;
@@ -7,7 +7,7 @@
   flex-direction: row;
 
   & * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: #ffffff;
   }
 
@@ -18,14 +18,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
-    &::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      height: 100%;
-      width: 25%;
-      background-color: rgba(255, 255, 255, 0.2);
+
+    @for $i from 0 through 100 {
+      &.bg-#{$i}{
+        &::before {
+          content: "";
+          position: absolute;
+          top: #{100-$i} + "%";
+          height: #{$i} + "%";
+          width: 25%;
+          background-color: rgba(255, 255, 255, 0.2);
+        }
+      }
     }
 
     .digit {
@@ -42,24 +46,25 @@
       text-transform: uppercase;
     }
 
-    &:nth-child(1){
+    // replace @each
+    &:nth-child(1) {
       background-color: #014e92;
     }
 
-    &:nth-child(2){
+    &:nth-child(2) {
       background-color: #035eae;
     }
 
-    &:nth-child(3){
+    &:nth-child(3) {
       background-color: #186db8;
     }
 
-    &:nth-child(4){
+    &:nth-child(4) {
       background-color: #2d76b6;
     }
   }
 
+  // TODO: Mobile styles
   @media only screen and (min-width: 550px) {
-    
   }
 }
