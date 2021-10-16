@@ -1,14 +1,27 @@
-<html>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      overscroll-behavior-y: none;
-      background-color: #041729;
-      overflow: hidden;
-    }
-  </style>
-  <title>TffT! Countdown</title>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TffT! Countdown</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html {
+        min-height: 100%;
+      }
+      body {
+        height: 100vh;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        overscroll-behavior-y: none;
+        background-color: #bce49f;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
   <body id="tfft-countdown">
     <div class="TfftCountdown">
       <div class="days group">
@@ -28,6 +41,7 @@
         <div class="label">Seconds</div>
       </div>
     </div>
-    <script src="./main.js"></script>
+    <script src="./modules/tfftCountdown.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
   </body>
 </html>

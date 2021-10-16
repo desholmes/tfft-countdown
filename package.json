@@ -1,6 +1,6 @@
 {
   "name": "tfft-countdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple countdown.",
   "repository": "https://github.com/desholmes/tfft-countdown",
   "scripts": {
@@ -13,8 +13,11 @@
   "author": "Des Holmes https://github.com/desholmes",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "1.12.4",
-    "prettier": "2.1.2",
-    "sass": "1.28.0"
+    "@parcel/transformer-sass": "^2.0.0",
+    "parcel": "^2.0.0",
+    "prettier": "2.1.2"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }

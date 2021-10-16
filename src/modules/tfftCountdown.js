@@ -1,3 +1,5 @@
+import "./tfffCountdown.scss";
+
 class TfftCountdown {
   #id = "tfft-countdown";
   #dom = {};
