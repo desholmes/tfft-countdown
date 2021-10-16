@@ -1,6 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,900");
-@import url("./../../node_modules/normalize.css/normalize.css");
-
 
 .TfftCountdown {
   width: 100%;
@@ -13,7 +11,7 @@
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
   }
-  
+
   @media only screen and (min-width: 550px) {
     flex-direction: row;
   }
@@ -25,6 +23,26 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @for $i from 0 through 100 {
+      &.bg-#{$i} {
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: rgba(255, 255, 255, 0.2);
+          @media only screen and (max-width: 550px) {
+            right: #{100-$i} + "%";
+            width: #{$i} + "%";
+            height: 25%;
+          }
+          @media only screen and (min-width: 550px) {
+            top: #{100-$i} + "%";
+            height: #{$i} + "%";
+            width: 25%;
+          }
+        }
+      }
+    }
 
     .digit {
       font-size: 2.5em;
@@ -61,7 +79,6 @@
         font-size: 2em;
         letter-spacing: 0.05em;
       }
-
     }
 
     // replace @each

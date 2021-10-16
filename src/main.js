@@ -3,7 +3,7 @@
 
 const config = {
   containerId: "tfft-countdown",
-  targetDate: { date: 30, month: 0, year: 2021 },
+  targetDate: { date: 23, month: 11, year: 2021 },
 };
 
 const init = () => {
