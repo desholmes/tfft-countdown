@@ -14,6 +14,12 @@
       content="countdown, clock, web development, frontend development, javascript"
     />
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@whodadada">
+    <meta name="twitter:creator" content="@whodadada">
+    <meta property="twitter:description" content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to.">
+    <meta property="twitter:image" content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png">
+
     <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="TffT! | A simple countdown clock" />
@@ -21,8 +27,13 @@
       property="og:description"
       content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to."
     />
-    <meta property="og:url" content="https://hello.dholmes.co.uk" />
+    <meta property="og:url" content="https://tfft.dholmes.co.uk" />
     <meta property="og:site_name" content="TffT! | A simple countdown clock" />
+    <meta property="og:image" content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png" />
+    <meta property="og:image:width" content="1190" />
+    <meta property="og:image:height" content="683" />
+
+    <link rel="shortcut icon" href="./favicon.png">
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
       rel="stylesheet"
@@ -34,6 +45,13 @@
     </style>
   </head>
   <body id="tfft-countdown">
+    <nav>
+      <ul>
+        <li>
+          <a href="https://dholmes.co.uk/blog/tfft-simple-countdown-clock/">Blog Post</a>
+        </li>
+      </ul>
+    </nav>
     <main class="TfftCountdown">
       <div class="days group">
         <div class="digit">00</div>
@@ -54,7 +72,7 @@
     </main>
     <a
       class="github-fork-ribbon right-top black"
-      data-ribbon="Form me on GitHub"
+      data-ribbon="Fork me on GitHub"
       href="https://github.com/desholmes/tfft-countdown"
     ></a>
     <script src="./main.js" type="module"></script>
