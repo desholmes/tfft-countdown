@@ -1,9 +1,20 @@
 import TfftCountdown from "./modules/tfftCountdown";
-import "./scss/main.scss";
 
 const config = {
   containerId: "tfft-countdown",
-  targetDate: { date: 30, month: 0, year: 2021 },
+  targetDate: { date: 23, month: 11, year: 2021 },
 };
 
-const terminal = new TfftCountdown(config);
+const init = () => {
+  // eslint-disable-next-line no-new
+  new TfftCountdown(config);
+};
+
+if (
+  document.readyState === "complete" ||
+  (document.readyState !== "loading" && !document.documentElement.doScroll)
+) {
+  init();
+} else {
+  document.addEventListener("DOMContentLoaded", init);
+}

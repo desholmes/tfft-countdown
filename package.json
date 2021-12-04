@@ -1,20 +1,32 @@
 {
   "name": "tfft-countdown",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple countdown.",
   "repository": "https://github.com/desholmes/tfft-countdown",
   "scripts": {
     "clean": "rm -rf ./dist/*.css ./dist/*.map ./dist/*.js ",
+    "deploy": "npm run build && ./deploy.sh",
     "start": "parcel ./src/index.html",
     "build": "npm run clean && parcel build ./src/index.html",
-    "lint": "prettier --check .",
-    "lint-fix": "prettier --write ."
+    "build:serve": "serve ./dist",
+    "lint": "./node_modules/.bin/eslint --max-warnings=0 --ext=js src",
+    "lint:fix": "./node_modules/.bin/eslint --max-warnings=0 --fix --ext=js src",
+    "prettier": "./node_modules/.bin/prettier --check ./src/",
+    "prettier:fix": "./node_modules/.bin/prettier --write ./src/",
+    "prettier-lint:fix": "npm run prettier:fix && npm run lint:fix"
   },
   "author": "Des Holmes https://github.com/desholmes",
   "license": "MIT",
   "devDependencies": {
-    "parcel-bundler": "1.12.4",
+    "@babel/eslint-parser": "^7.16.3",
+    "@parcel/transformer-sass": "^2.0.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "parcel": "^2.0.0",
     "prettier": "2.1.2",
-    "sass": "1.28.0"
+    "serve": "^13.0.2"
   }
 }

@@ -1,7 +1,10 @@
+import "./tfffCountdown.scss";
+
 class TfftCountdown {
-  #id = "tfft-countdown";
   #dom = {};
+
   #containerEl;
+
   #targetDate;
 
   constructor(configProps = {}) {
@@ -75,7 +78,7 @@ class TfftCountdown {
   }
 
   #setTimer() {
-    const timer = setInterval(() => {
+    setInterval(() => {
       this.#updateClock();
     }, 1000);
   }
