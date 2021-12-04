@@ -1,11 +1,14 @@
+import TfftCountdown from "./modules/tfftCountdown";
+
 const config = {
   containerId: "tfft-countdown",
   targetDate: { date: 23, month: 11, year: 2021 },
 };
 
 const init = () => {
+  // eslint-disable-next-line no-new
   new TfftCountdown(config);
-}
+};
 
 if (
   document.readyState === "complete" ||
@@ -15,4 +18,3 @@ if (
 } else {
   document.addEventListener("DOMContentLoaded", init);
 }
-

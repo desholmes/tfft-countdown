@@ -1,32 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>TffT! Countdown</title>
+    <title>TffT! | A simple countdown clock</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to."
+    />
+    <meta
+      name="keywords"
+      content="countdown, clock, web development, frontend development, javascript"
+    />
+
+    <meta property="og:locale" content="en" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TffT! | A simple countdown clock" />
+    <meta
+      property="og:description"
+      content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to."
+    />
+    <meta property="og:url" content="https://hello.dholmes.co.uk" />
+    <meta property="og:site_name" content="TffT! | A simple countdown clock" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+      rel="stylesheet"
+    />
     <style>
-      html {
-        min-height: 100%;
-      }
-      body {
-        height: 100vh;
-        min-height: 100%;
-        margin: 0;
-        padding: 0;
-        overscroll-behavior-y: none;
-        background-color: #bce49f;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
+      .github-fork-ribbon:before {
+        background-color: black;
       }
     </style>
   </head>
   <body id="tfft-countdown">
-    <div class="TfftCountdown">
+    <main class="TfftCountdown">
       <div class="days group">
-          <div class="digit">00</div>
-          <div class="label">Days</div>
+        <div class="digit">00</div>
+        <div class="label">Days</div>
       </div>
       <div class="hours group">
         <div class="digit">00</div>
@@ -40,8 +51,12 @@
         <div class="digit">00</div>
         <div class="label">Seconds</div>
       </div>
-    </div>
-    <script src="./modules/tfftCountdown.js" type="module"></script>
+    </main>
+    <a
+      class="github-fork-ribbon right-top black"
+      data-ribbon="Form me on GitHub"
+      href="https://github.com/desholmes/tfft-countdown"
+    ></a>
     <script src="./main.js" type="module"></script>
   </body>
 </html>
