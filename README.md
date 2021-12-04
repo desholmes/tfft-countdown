@@ -1,8 +1,8 @@
-# TffT! Countdown
+# TffT! A simple countdown clock
 
 A simple countdown clock to help you tick down the seconds to that thing you're looking forward to.
 
-Hosted at: [tfft.dholmes.co.uk](https://tfft.dholmes.co.uk/).
+Hosted at: [tfft.dholmes.co.uk](https://tfft.dholmes.co.uk/). Read more on the [blog post](https://dholmes.co.uk/blog/tfft-simple-countdown-clock/)
 
 This project uses:
 
