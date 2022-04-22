@@ -14,11 +14,17 @@
       content="countdown, clock, web development, frontend development, javascript"
     />
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@whodadada">
-    <meta name="twitter:creator" content="@whodadada">
-    <meta property="twitter:description" content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to.">
-    <meta property="twitter:image" content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@whodadada" />
+    <meta name="twitter:creator" content="@whodadada" />
+    <meta
+      property="twitter:description"
+      content="TffT! is a simple countdown clock to help you tick down the seconds to that thing you're looking forward to."
+    />
+    <meta
+      property="twitter:image"
+      content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png"
+    />
 
     <meta property="og:locale" content="en" />
     <meta property="og:type" content="website" />
@@ -29,11 +35,14 @@
     />
     <meta property="og:url" content="https://tfft.dholmes.co.uk" />
     <meta property="og:site_name" content="TffT! | A simple countdown clock" />
-    <meta property="og:image" content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png" />
+    <meta
+      property="og:image"
+      content="https://tfft.dholmes.co.uk/tfft-simple-countdown.png"
+    />
     <meta property="og:image:width" content="1190" />
     <meta property="og:image:height" content="683" />
 
-    <link rel="shortcut icon" href="./favicon.png">
+    <link rel="shortcut icon" href="./favicon.png" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
       rel="stylesheet"
@@ -43,12 +52,15 @@
         background-color: black;
       }
     </style>
+    <link rel="stylesheet" href="./modules/tfffCountdown.scss">
   </head>
   <body id="tfft-countdown">
     <nav>
       <ul>
         <li>
-          <a href="https://dholmes.co.uk/blog/tfft-simple-countdown-clock/">Blog Post</a>
+          <a href="https://dholmes.co.uk/blog/tfft-simple-countdown-clock/"
+            >Blog Post</a
+          >
         </li>
       </ul>
     </nav>
@@ -75,6 +87,26 @@
       data-ribbon="Fork me on GitHub"
       href="https://github.com/desholmes/tfft-countdown"
     ></a>
-    <script src="./main.js" type="module"></script>
+    <script src="./modules/tfftCountdown.js" type="module"></script>
+    <script>
+      const config = {
+        containerId: "tfft-countdown",
+        targetDate: { date: 27, month: 4, year: 2022 },
+      };
+
+      const init = () => {
+        TfftCountdown(config);
+      };
+
+      if (
+        document.readyState === "complete" ||
+        (document.readyState !== "loading" &&
+          !document.documentElement.doScroll)
+      ) {
+        init();
+      } else {
+        document.addEventListener("DOMContentLoaded", init);
+      }
+    </script>
   </body>
 </html>
