@@ -7,7 +7,7 @@ Hosted at: [tfft.dholmes.co.uk](https://tfft.dholmes.co.uk/). Read more on the [
 This project uses:
 
 1. [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-2. [Node v14.17.6](https://nodejs.org/en/)
+2. [Node v16.14.2](https://nodejs.org/en/)
 3. [SaSS](https://sass-lang.com/)
 4. [Parcel Bundler](https://parceljs.org/)
 5. [ESLint](https://eslint.org/)

@@ -1,53 +1,34 @@
-import "./tfffCountdown.scss";
+const TfftCountdown = (configProps = {}) => {
+  const { containerId = "tfft-countdown", targetDate } = configProps;
+  const containerEl = document.getElementById(containerId);
+  let dom;
 
-class TfftCountdown {
-  #dom = {};
-
-  #containerEl;
-
-  #targetDate;
-
-  constructor(configProps = {}) {
-    const { containerId = "tfft-countdown", targetDate } = configProps;
-
-    const containerEl = document.getElementById(containerId);
-
-    if (!containerEl) {
-      throw Error(`Container #${containerId} does not exist!`);
-    }
-
-    this.#containerEl = containerEl;
-    this.#targetDate = new Date(
-      targetDate.year,
-      targetDate.month,
-      targetDate.date
-    ).getTime();
-
-    this.#setUp();
+  if (!containerEl) {
+    throw Error(`Container #${containerId} does not exist!`);
   }
 
-  #setUp() {
-    this.#createDom();
-    this.#setTimer();
-    this.#updateClock();
-  }
+  const targetDateTime = new Date(
+    targetDate.year,
+    targetDate.month,
+    targetDate.date
+  ).getTime();
 
-  #createDom() {
-    this.#dom = {
-      days: this.#containerEl.querySelector(".days"),
-      daysDigit: this.#containerEl.querySelector(".days .digit"),
-      hours: this.#containerEl.querySelector(".hours"),
-      hoursDigit: this.#containerEl.querySelector(".hours .digit"),
-      minutes: this.#containerEl.querySelector(".minutes"),
-      minutesDigit: this.#containerEl.querySelector(".minutes .digit"),
-      seconds: this.#containerEl.querySelector(".seconds"),
-      secondsDigit: this.#containerEl.querySelector(".seconds .digit"),
+  const createDom = () => {
+    dom = {
+      days: containerEl.querySelector(".days"),
+      daysDigit: containerEl.querySelector(".days .digit"),
+      hours: containerEl.querySelector(".hours"),
+      hoursDigit: containerEl.querySelector(".hours .digit"),
+      minutes: containerEl.querySelector(".minutes"),
+      minutesDigit: containerEl.querySelector(".minutes .digit"),
+      seconds: containerEl.querySelector(".seconds"),
+      secondsDigit: containerEl.querySelector(".seconds .digit"),
     };
-  }
+  };
 
-  #updateClock() {
+  const updateClock = () => {
     const today = new Date().getTime();
-    const diff = this.#targetDate - today;
+    const diff = targetDateTime - today;
 
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -60,29 +41,37 @@ class TfftCountdown {
     const secondsBg = `bg-${Math.floor((seconds / 60) * 100)}`;
 
     // Update days
-    this.#dom.days.classList.remove(this.#dom.minutes.classList[2]);
-    this.#dom.days.classList.add(dayBg);
-    this.#dom.daysDigit.innerHTML = days;
+    dom.days.classList.remove(dom.minutes.classList[2]);
+    dom.days.classList.add(dayBg);
+    dom.daysDigit.innerHTML = days;
     // Update hours
-    this.#dom.hours.classList.remove(this.#dom.minutes.classList[2]);
-    this.#dom.hours.classList.add(hourBg);
-    this.#dom.hoursDigit.innerHTML = hours;
+    dom.hours.classList.remove(dom.minutes.classList[2]);
+    dom.hours.classList.add(hourBg);
+    dom.hoursDigit.innerHTML = hours;
     // Update minutes
-    this.#dom.minutes.classList.remove(this.#dom.minutes.classList[2]);
-    this.#dom.minutes.classList.add(minutesBg);
-    this.#dom.minutesDigit.innerHTML = minutes;
+    dom.minutes.classList.remove(dom.minutes.classList[2]);
+    dom.minutes.classList.add(minutesBg);
+    dom.minutesDigit.innerHTML = minutes;
     // Update seconds
-    this.#dom.seconds.classList.remove(this.#dom.seconds.classList[2]);
-    this.#dom.seconds.classList.add(secondsBg);
-    this.#dom.secondsDigit.innerHTML = seconds;
-  }
+    dom.seconds.classList.remove(dom.seconds.classList[2]);
+    dom.seconds.classList.add(secondsBg);
+    dom.secondsDigit.innerHTML = seconds;
+  };
 
-  #setTimer() {
+  const setTimer = () => {
     setInterval(() => {
-      this.#updateClock();
+      updateClock();
     }, 1000);
-  }
-}
+  };
+
+  const setUp = () => {
+    createDom();
+    setTimer();
+    updateClock();
+  };
+
+  setUp();
+};
 
 if (window) {
   window.TfftCountdown = TfftCountdown;
