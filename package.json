@@ -4,7 +4,7 @@
   "description": "A simple countdown.",
   "repository": "https://github.com/desholmes/tfft-countdown",
   "scripts": {
-    "clean": "rm -rf ./dist/*.css ./dist/*.map ./dist/*.js ",
+    "clean": "rm -rf ./dist/*.css ./dist/*.map ./dist/*.js ./dist/*.png ./dist/*.html",
     "deploy": "npm run build && ./deploy.sh",
     "start": "parcel ./src/index.html",
     "build": "npm run clean && parcel build ./src/index.html",
