@@ -73,6 +73,7 @@ body {
           content: "";
           position: absolute;
           background-color: rgba(255, 255, 255, 0.2);
+          transition: all 300ms;
           @media only screen and (max-width: 550px) {
             right: #{100-$i} + "%";
             width: #{$i} + "%";
