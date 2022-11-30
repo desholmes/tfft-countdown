@@ -1,6 +1,6 @@
 {
   "name": "tfft-countdown",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A simple countdown.",
   "repository": "https://github.com/desholmes/tfft-countdown",
   "scripts": {
@@ -18,15 +18,13 @@
   "author": "Des Holmes https://github.com/desholmes",
   "license": "MIT",
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
-    "@parcel/transformer-sass": "^2.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.24.2",
-    "parcel": "^2.5.0",
-    "prettier": "2.1.2",
-    "serve": "^13.0.2"
+    "@parcel/transformer-sass": "2.8.0",
+    "eslint": "8.28.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-import": "2.26.0",
+    "parcel": "2.8.0",
+    "prettier": "2.7.1",
+    "serve": "14.1.2"
   }
 }
